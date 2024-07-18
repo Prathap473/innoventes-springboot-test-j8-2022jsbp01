@@ -87,4 +87,15 @@ public class CompanyController {
 		return messageSource.getMessage(exceptionCode, null, LocaleContextHolder.getLocale());
 	}
 
+	@RestController
+	@RequestMapping("/api/companies")
+	public class Company COntroller {
+
+		@Autowired
+		private CompanyService companyService;
+
+		@GetMapping('/{id}")
+		public CompanyDTO getCompanyById(@PathVariable Long id) {
+			return companyService.getCompareById(id);
+		}
 }
